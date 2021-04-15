@@ -1,11 +1,14 @@
-# vue-date-picker
+# vue-validation-input
 
 Input with validation component for Vue 2.x
+
+## Demo
+--
 
 ## Screenshot
 --
 
-## Instllation
+## Installation
 
 ```bash
 $ npm install vue-validation-input --save
