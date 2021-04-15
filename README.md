@@ -19,13 +19,9 @@ $ npm install vue-validation-input
 
 ## Prop
 
-| Prop                          | Type               | Required    | Default     | Description                              |
-|-------------------------------|--------------------|:-----------:|:-----------:|------------------------------------------|
-| input-class                   | String             | false       | vue-validation-input         | Binding class for input                                       |
-| label                  | String             | false       | --         | Label for input                                       |
-| min-length                   | Number             | false       | 0         | Minimum length of input before it gets considered as valid                                       |
-| max-length                   | Number             | false       | 0         | Maximum length of input before it gets considered as valid                                      |
-| placeholder                   | String             | false       | --         | Placeholder for input                                       |
+| Prop                          | Type               | Default     | Description                              |
+|-------------------------------|--------------------|:-----------:|------------------------------------------|
+| --                            | --                 | --          | --                                       |
 
 
 ## License
