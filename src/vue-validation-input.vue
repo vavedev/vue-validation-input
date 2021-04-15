@@ -3,13 +3,13 @@
 </style>
 
 <template>
-  <div class="">
-    <label :for="`${inputClass}-label`">{{label}}</label>
-    <input 
+  <div class="vue-validation-input-container" :class="containerClass">
+    <label class="vue-validation-input-label" :class="labelClass">{{label}}</label>
+    <input
+    class="vue-validation-input"
     v-model="value"
-    :class="inputClass" 
-    :placeholder="placeholder" 
-    >
+    :class="inputClass"
+    :placeholder="placeholder">
   </div>
 </template>
 
@@ -17,11 +17,13 @@
 export default {
   name: 'VueValidationInput',
   props: {
-    inputClass: { type: String, required: false, default: 'vue-validation-input'},
-    label: {type: String, required: false, default: '' },
-    minLength: { type: Number, required: false, default: 0 },
-    maxLength: { type: Number, required: false, default: 0 }, 
-    placeholder: { type: String, required: false, default: '' }
+    containerClass: { type: [String, Array, Object], default: '' },
+    inputClass: { type: [String, Array, Object], default: '' },
+    labelClass: { type: [String, Array, Object], default: '' },
+    label: {type: String, default: '' },
+    minLength: { type: Number, default: 0 },
+    maxLength: { type: Number, default: 0 }, 
+    placeholder: { type: String, default: '' }
   },
   data() {
     return {
