@@ -3,6 +3,7 @@
 Input with validation component for Vue 2.x
 
 ## Screenshot
+--
 
 ## Instllation
 
@@ -14,7 +15,7 @@ $ npm install vue-validation-input --save
 
 | Prop                          | Type               | Default     | Description                              |
 |-------------------------------|--------------------|:-----------:|------------------------------------------|
-| value                         | String             | --          | Date value of the datepicker             |
+| --                            | --                 | --          | --                                       |
 
 
 ## License
