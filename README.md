@@ -14,6 +14,9 @@ Input with validation component for Vue 2.x
 $ npm install vue-validation-input --save
 ```
 
+## Usage
+--
+
 ## Prop
 
 | Prop                          | Type               | Default     | Description                              |
