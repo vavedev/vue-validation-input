@@ -11,7 +11,7 @@ Input with validation component for Vue 2.x
 ## Installation
 
 ```bash
-$ npm install vue-validation-input --save
+$ npm install vue-validation-input
 ```
 
 ## Usage
