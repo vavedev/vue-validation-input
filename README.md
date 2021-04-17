@@ -1,12 +1,10 @@
 # vue-validation-input
 
-This is just a simple extension to the default input element
-
-## Demo
---
+This is just a simple extension to the default input element which shows an SVG icon if valid or not.
 
 ## Screenshot
---
+![image](https://user-images.githubusercontent.com/70732026/115116282-5baa5880-9fcb-11eb-8f92-bc7a18d08422.png)
+![image](https://user-images.githubusercontent.com/70732026/115116323-83012580-9fcb-11eb-9810-ff219c4b069f.png)
 
 ## Installation
 
@@ -21,7 +19,7 @@ $ npm install vue-validation-input
 
 | Prop                          | Type               | Default     | Description                              |
 |-------------------------------|--------------------|:-----------:|------------------------------------------|
-| container-class                   | String, Array, Object | ""       | Binding class for input container |
+| container-class               | String, Array, Object | ""       | Binding class for input container |
 | input-class                   | String, Array, Object | ""       | Binding class for input |
 | icon-class                    | String, Array, Object | ""       | Binding class for SVG icon |
 | placeholder                   | String             | ""          | Placeholder text |
