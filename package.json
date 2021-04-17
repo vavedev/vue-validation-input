@@ -1,7 +1,9 @@
 {
   "name": "vue-validation-input",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is just a simple extension to the default input element which shows an SVG icon if valid or not.",
+  "license" : "MIT",
+  "keywords": ["vue", "vue-validation-input", "input", "validation-input"],
   "main": "dist/vue-validation-input.ssr.js",
   "browser": "dist/vue-validation-input.esm.js",
   "module": "dist/vue-validation-input.esm.js",
