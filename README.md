@@ -13,7 +13,26 @@ $ npm install vue-validation-input
 ```
 
 ## Usage
---
+```html
+<template>
+  <div id="app">
+    <vue-validation-input :readonly="true" :placeholder="'Placeholder text'"></vue-validation-input>
+    <vue-validation-input :minlength="5" maxlength="10"></vue-validation-input>
+    <vue-validation-input :class="'customClass'" :pattern="Hello\nworld"></vue-validation-input>
+    <vue-validation-input :class="['customClass', 'customClass2']" valid-color="'green'"></vue-validation-input>
+  </div>
+</template>
+
+<script>
+import VueValidationInput from 'vue-validation-input'
+
+export default {
+  components: {
+    VueValidationInput
+  },
+}
+</script>
+```
 
 ## Prop
 
