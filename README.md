@@ -1,5 +1,5 @@
 # vue-validation-input
-[![npm version](https://badge.fury.io/js/vue-validation-input.svg)](https://badge.fury.io/js/vue-validation-input)
+
 [![dependencies](https://david-dm.org/riyuuryu/vue-validation-input.svg)](https://david-dm.org/riyuuryu/vue-validation-input.svg)
 [![devDependencies Status](https://status.david-dm.org/gh/riyuuryu/vue-validation-input.svg?type=dev)](https://david-dm.org/riyuuryu/vue-validation-input?type=dev)
 [![peerDependencies Status](https://status.david-dm.org/gh/riyuuryu/vue-validation-input.svg?type=peer)](https://david-dm.org/riyuuryu/vue-validation-input?type=peer)
