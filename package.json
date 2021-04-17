@@ -1,6 +1,11 @@
 {
   "name": "vue-validation-input",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "author": {
+    "name" : "Riyuu Ryu",
+    "email" : "riyuuryu@gmail.com"
+  },
+  "homepage": "https://github.com/riyuuryu/vue-validation-input/blob/main/README.md",
   "description": "This is just a simple extension to the default input element which shows an SVG icon if valid or not.",
   "license" : "MIT",
   "keywords": ["vue", "vue-validation-input", "input", "validation-input"],
