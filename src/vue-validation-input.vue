@@ -58,6 +58,7 @@ export default {
       if(newValue !== oldValue){
         if(this.minlength) this.valid = newValue.length < this.minlength ? false : true;
         if(this.pattern) this.valid = newValue.match(this.pattern) ? true : false;
+        this.$emit('vue-validation-output', { value: this.value, valid: this.valid });
       }
     }
   },
