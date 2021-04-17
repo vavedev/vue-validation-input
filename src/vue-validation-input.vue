@@ -12,7 +12,7 @@
 </style>
 
 <template>
-  <div class="vue-validation-container">
+  <div class="vue-validation-container" :class="containerClass">
     <input
     class="vue-validation-input"
     :class="inputClass"
@@ -21,7 +21,8 @@
     :minlength="minlength"
     :maxlength="maxlength"
     :placeholder="placeholder"
-    :pattern="pattern">
+    :pattern="pattern"
+    :readonly="readonly">
     <font-awesome-icon
     v-if="value"
     class="vue-validation-input-error-icon"
@@ -35,10 +36,12 @@
 export default {
   name: 'VueValidationInput',
   props: {
+    containerClass: { type: [String, Array, Object], default: '' },
     inputClass: { type: [String, Array, Object], default: '' },
     iconClass: { type: [String, Array, Object], default: '' },
     placeholder: { type: String, default: '' },
     pattern: { type: String, default: '' },
+    readonly: { type: Boolean, default: false },
     minlength: { type: Number, default: 1 },
     maxlength: { type: Number, default: -1 },
     validColor: { type: String, default: '#33AF28' },
