@@ -54,6 +54,12 @@ export default {
 | valid-color                   | String             | #33AF28 | Valid SVG icon color |
 | invalid-color                 | String             | #EE0202 | Invalid SVG icon color |
 
+## Event
+
+| Event                          | Type               | Output                     |
+|--------------------------------|--------------------|----------------------------|
+| vue-validation-output          | Object             | { value: String, valid: Boolean } |
+
 
 ## License
 
