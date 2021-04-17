@@ -1,9 +1,8 @@
 # vue-validation-input
-
+[![npm version](https://badge.fury.io/js/vue-validation-input.svg)](https://badge.fury.io/js/vue-validation-input)
 [![dependencies](https://david-dm.org/riyuuryu/vue-validation-input.svg)](https://david-dm.org/riyuuryu/vue-validation-input.svg)
 [![devDependencies Status](https://status.david-dm.org/gh/riyuuryu/vue-validation-input.svg?type=dev)](https://david-dm.org/riyuuryu/vue-validation-input?type=dev)
 [![peerDependencies Status](https://status.david-dm.org/gh/riyuuryu/vue-validation-input.svg?type=peer)](https://david-dm.org/riyuuryu/vue-validation-input?type=peer)
-[![Node.js Package](https://github.com/riyuuryu/vue-validation-input/actions/workflows/npm-publish.yml/badge.svg?branch=main)](https://github.com/riyuuryu/vue-validation-input/actions/workflows/npm-publish.yml)
 
 This is just a simple extension to the default input element which shows an SVG icon if valid or not.
 
@@ -59,7 +58,6 @@ export default {
 | Event                          | Type               | Output                     |
 |--------------------------------|--------------------|----------------------------|
 | vue-validation-output          | Object             | { value: String, valid: Boolean } |
-
 
 ## License
 
