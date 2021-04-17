@@ -87,6 +87,10 @@ var script = {
       if (newValue !== oldValue) {
         if (this.minlength) this.valid = newValue.length < this.minlength ? false : true;
         if (this.pattern) this.valid = newValue.match(this.pattern) ? true : false;
+        this.$emit('vue-validation-output', {
+          value: this.value,
+          valid: this.valid
+        });
       }
     }
   }
@@ -217,7 +221,7 @@ var __vue_render__ = function __vue_render__() {
   return _c('div', {
     staticClass: "vue-validation-container",
     class: _vm.containerClass
-  }, [_vm._ssrNode("<input type=\"text\"" + _vm._ssrAttr("minlength", _vm.minlength) + _vm._ssrAttr("maxlength", _vm.maxlength) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("pattern", _vm.pattern) + _vm._ssrAttr("readonly", _vm.readonly) + _vm._ssrAttr("value", _vm.value) + _vm._ssrClass("vue-validation-input", _vm.inputClass) + " data-v-ce2dd152> "), _vm.value ? _c('font-awesome-icon', {
+  }, [_vm._ssrNode("<input type=\"text\"" + _vm._ssrAttr("minlength", _vm.minlength) + _vm._ssrAttr("maxlength", _vm.maxlength) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("pattern", _vm.pattern) + _vm._ssrAttr("readonly", _vm.readonly) + _vm._ssrAttr("value", _vm.value) + _vm._ssrClass("vue-validation-input", _vm.inputClass) + " data-v-a0dfc09c> "), _vm.value ? _c('font-awesome-icon', {
     staticClass: "vue-validation-input-error-icon",
     class: _vm.iconClass,
     attrs: {
@@ -232,8 +236,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-ce2dd152_0", {
-    source: ".vue-validation-container[data-v-ce2dd152]{display:flex;align-items:center}.vue-validation-input[data-v-ce2dd152]{margin-right:2px}.vue-validation-input[data-v-ce2dd152]:focus{outline:0}",
+  inject("data-v-a0dfc09c_0", {
+    source: ".vue-validation-container[data-v-a0dfc09c]{display:flex;align-items:center}.vue-validation-input[data-v-a0dfc09c]{margin-right:2px}.vue-validation-input[data-v-a0dfc09c]:focus{outline:0}",
     map: undefined,
     media: undefined
   });
@@ -241,10 +245,10 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-ce2dd152";
+var __vue_scope_id__ = "data-v-a0dfc09c";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-ce2dd152";
+var __vue_module_identifier__ = "data-v-a0dfc09c";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
