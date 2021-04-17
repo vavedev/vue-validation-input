@@ -1,6 +1,6 @@
 # vue-validation-input
 
-Input with validation component for Vue 2.x
+This is just a simple extension to the default input element
 
 ## Demo
 --
@@ -21,10 +21,12 @@ $ npm install vue-validation-input
 
 | Prop                          | Type               | Default     | Description                              |
 |-------------------------------|--------------------|:-----------:|------------------------------------------|
+| container-class                   | String, Array, Object | ""       | Binding class for input container |
 | input-class                   | String, Array, Object | ""       | Binding class for input |
 | icon-class                    | String, Array, Object | ""       | Binding class for SVG icon |
 | placeholder                   | String             | ""          | Placeholder text |
 | pattern                       | String             | ""          | A regular expression the input's contents must match in order to be valid |
+| readonly                      | Boolean            | false       | Boolean controller if input is read-only |
 | minlength                     | Number             | 1           | The minimum length of input to be considered as valid |
 | maxlength                     | Number             | -1          | The maximum allowed number of characters |
 | valid-color                   | String             | #33AF28 | Valid SVG icon color |
