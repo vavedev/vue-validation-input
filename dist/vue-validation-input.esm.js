@@ -1,49 +1,96 @@
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var script = {
   name: 'VueValidationInput',
+  props: {
+    containerClass: {
+      type: [String, Array, Object],
+      default: ''
+    },
+    inputClass: {
+      type: [String, Array, Object],
+      default: ''
+    },
+    iconClass: {
+      type: [String, Array, Object],
+      default: ''
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    },
+    pattern: {
+      type: String,
+      default: ''
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    minlength: {
+      type: Number,
+      default: 1
+    },
+    maxlength: {
+      type: Number,
+      default: -1
+    },
+    validColor: {
+      type: String,
+      default: '#33AF28'
+    },
+    invalidColor: {
+      type: String,
+      default: '#EE0202'
+    }
+  },
 
-  // vue component name
   data() {
     return {
-      counter: 5,
-      initCounter: 5,
-      message: {
-        action: null,
-        amount: null
-      }
+      value: '',
+      valid: false
     };
   },
 
-  computed: {
-    changedBy() {
-      const {
-        message
-      } = this;
-      if (!message.action) return 'initialized';
-      return `${message === null || message === void 0 ? void 0 : message.action} ${message.amount ?? ''}`.trim();
+  watch: {
+    value: function (newValue, oldValue) {
+      if (newValue !== oldValue) {
+        if (this.minlength) this.valid = newValue.length < this.minlength ? false : true;
+        if (this.pattern) this.valid = newValue.match(this.pattern) ? true : false;
+      }
     }
-
-  },
-  methods: {
-    increment(arg) {
-      const amount = typeof arg !== 'number' ? 1 : arg;
-      this.counter += amount;
-      this.message.action = 'incremented by';
-      this.message.amount = amount;
-    },
-
-    decrement(arg) {
-      const amount = typeof arg !== 'number' ? 1 : arg;
-      this.counter -= amount;
-      this.message.action = 'decremented by';
-      this.message.amount = amount;
-    },
-
-    reset() {
-      this.counter = this.initCounter;
-      this.message.action = 'reset';
-      this.message.amount = null;
-    }
-
   }
 };
 
@@ -187,32 +234,45 @@ var __vue_render__ = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
-    staticClass: "vue-validation-input"
-  }, [_c('p', [_vm._v("The counter was " + _vm._s(_vm.changedBy) + " to "), _c('b', [_vm._v(_vm._s(_vm.counter))]), _vm._v(".")]), _vm._v(" "), _c('button', {
+    staticClass: "vue-validation-container",
+    class: _vm.containerClass
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.value,
+      expression: "value"
+    }],
+    staticClass: "vue-validation-input",
+    class: _vm.inputClass,
+    attrs: {
+      "type": "text",
+      "minlength": _vm.minlength,
+      "maxlength": _vm.maxlength,
+      "placeholder": _vm.placeholder,
+      "pattern": _vm.pattern,
+      "readonly": _vm.readonly
+    },
+    domProps: {
+      "value": _vm.value
+    },
     on: {
-      "click": _vm.increment
-    }
-  }, [_vm._v("\n    Click +1\n  ")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": _vm.decrement
-    }
-  }, [_vm._v("\n    Click -1\n  ")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": function ($event) {
-        return _vm.increment(5);
+      "input": function ($event) {
+        if ($event.target.composing) {
+          return;
+        }
+
+        _vm.value = $event.target.value;
       }
     }
-  }, [_vm._v("\n    Click +5\n  ")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": function ($event) {
-        return _vm.decrement(5);
-      }
+  }), _vm._v(" "), _vm.value ? _c('font-awesome-icon', {
+    staticClass: "vue-validation-input-error-icon",
+    class: _vm.iconClass,
+    attrs: {
+      "color": _vm.valid ? _vm.validColor : _vm.invalidColor,
+      "icon": _vm.valid ? 'check-circle' : 'times-circle'
     }
-  }, [_vm._v("\n    Click -5\n  ")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": _vm.reset
-    }
-  }, [_vm._v("\n    Reset\n  ")])]);
+  }) : _vm._e()], 1);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -220,8 +280,8 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-d26815e4_0", {
-    source: ".vue-validation-input[data-v-d26815e4]{display:block;width:400px;margin:25px auto;border:1px solid #ccc;background:#eaeaea;text-align:center;padding:25px}.vue-validation-input p[data-v-d26815e4]{margin:0 0 1em}",
+  inject("data-v-ce2dd152_0", {
+    source: ".vue-validation-container[data-v-ce2dd152]{display:flex;align-items:center}.vue-validation-input[data-v-ce2dd152]{margin-right:2px}.vue-validation-input[data-v-ce2dd152]:focus{outline:0}",
     map: undefined,
     media: undefined
   });
@@ -229,7 +289,7 @@ const __vue_inject_styles__ = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__ = "data-v-d26815e4";
+const __vue_scope_id__ = "data-v-ce2dd152";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;
@@ -245,18 +305,12 @@ const __vue_component__ = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, createInjector, undefined, undefined);
 
-// Import vue component
-
 const install = function installVueValidationInput(Vue) {
   if (install.installed) return;
   install.installed = true;
   Vue.component('VueValidationInput', __vue_component__);
-}; // Create module definition for Vue.use()
-// to be registered via Vue.use() as well as Vue.component()
+};
 
-
-__vue_component__.install = install; // Export component by default
-// also be used as directives, etc. - eg. import { RollupDemoDirective } from 'rollup-demo';
-// export const RollupDemoDirective = component;
+__vue_component__.install = install;
 
 export default __vue_component__;

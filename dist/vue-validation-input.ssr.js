@@ -1,42 +1,93 @@
-'use strict';Object.defineProperty(exports,'__esModule',{value:true});var script = {
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script = {
   name: 'VueValidationInput',
-  // vue component name
-  data: function data() {
-    return {
-      counter: 5,
-      initCounter: 5,
-      message: {
-        action: null,
-        amount: null
-      }
-    };
-  },
-  computed: {
-    changedBy: function changedBy() {
-      var _message$amount;
-
-      var message = this.message;
-      if (!message.action) return 'initialized';
-      return "".concat(message === null || message === void 0 ? void 0 : message.action, " ").concat((_message$amount = message.amount) !== null && _message$amount !== void 0 ? _message$amount : '').trim();
+  props: {
+    containerClass: {
+      type: [String, Array, Object],
+      default: ''
+    },
+    inputClass: {
+      type: [String, Array, Object],
+      default: ''
+    },
+    iconClass: {
+      type: [String, Array, Object],
+      default: ''
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    },
+    pattern: {
+      type: String,
+      default: ''
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    minlength: {
+      type: Number,
+      default: 1
+    },
+    maxlength: {
+      type: Number,
+      default: -1
+    },
+    validColor: {
+      type: String,
+      default: '#33AF28'
+    },
+    invalidColor: {
+      type: String,
+      default: '#EE0202'
     }
   },
-  methods: {
-    increment: function increment(arg) {
-      var amount = typeof arg !== 'number' ? 1 : arg;
-      this.counter += amount;
-      this.message.action = 'incremented by';
-      this.message.amount = amount;
-    },
-    decrement: function decrement(arg) {
-      var amount = typeof arg !== 'number' ? 1 : arg;
-      this.counter -= amount;
-      this.message.action = 'decremented by';
-      this.message.amount = amount;
-    },
-    reset: function reset() {
-      this.counter = this.initCounter;
-      this.message.action = 'reset';
-      this.message.amount = null;
+  data: function data() {
+    return {
+      value: '',
+      valid: false
+    };
+  },
+  watch: {
+    value: function value(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        if (this.minlength) this.valid = newValue.length < this.minlength ? false : true;
+        if (this.pattern) this.valid = newValue.match(this.pattern) ? true : false;
+      }
     }
   }
 };function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
@@ -164,8 +215,16 @@ var __vue_render__ = function __vue_render__() {
   var _c = _vm._self._c || _h;
 
   return _c('div', {
-    staticClass: "vue-validation-input"
-  }, [_vm._ssrNode("<p data-v-d26815e4>" + _vm._ssrEscape("The counter was " + _vm._s(_vm.changedBy) + " to ") + "<b data-v-d26815e4>" + _vm._ssrEscape(_vm._s(_vm.counter)) + "</b>.</p> <button data-v-d26815e4>\n    Click +1\n  </button> <button data-v-d26815e4>\n    Click -1\n  </button> <button data-v-d26815e4>\n    Click +5\n  </button> <button data-v-d26815e4>\n    Click -5\n  </button> <button data-v-d26815e4>\n    Reset\n  </button>")]);
+    staticClass: "vue-validation-container",
+    class: _vm.containerClass
+  }, [_vm._ssrNode("<input type=\"text\"" + _vm._ssrAttr("minlength", _vm.minlength) + _vm._ssrAttr("maxlength", _vm.maxlength) + _vm._ssrAttr("placeholder", _vm.placeholder) + _vm._ssrAttr("pattern", _vm.pattern) + _vm._ssrAttr("readonly", _vm.readonly) + _vm._ssrAttr("value", _vm.value) + _vm._ssrClass("vue-validation-input", _vm.inputClass) + " data-v-ce2dd152> "), _vm.value ? _c('font-awesome-icon', {
+    staticClass: "vue-validation-input-error-icon",
+    class: _vm.iconClass,
+    attrs: {
+      "color": _vm.valid ? _vm.validColor : _vm.invalidColor,
+      "icon": _vm.valid ? 'check-circle' : 'times-circle'
+    }
+  }) : _vm._e()], 2);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -173,8 +232,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-d26815e4_0", {
-    source: ".vue-validation-input[data-v-d26815e4]{display:block;width:400px;margin:25px auto;border:1px solid #ccc;background:#eaeaea;text-align:center;padding:25px}.vue-validation-input p[data-v-d26815e4]{margin:0 0 1em}",
+  inject("data-v-ce2dd152_0", {
+    source: ".vue-validation-container[data-v-ce2dd152]{display:flex;align-items:center}.vue-validation-input[data-v-ce2dd152]{margin-right:2px}.vue-validation-input[data-v-ce2dd152]:focus{outline:0}",
     map: undefined,
     media: undefined
   });
@@ -182,10 +241,10 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-d26815e4";
+var __vue_scope_id__ = "data-v-ce2dd152";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-d26815e4";
+var __vue_module_identifier__ = "data-v-ce2dd152";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
@@ -194,21 +253,15 @@ var __vue_is_functional_template__ = false;
 var __vue_component__ = /*#__PURE__*/normalizeComponent({
   render: __vue_render__,
   staticRenderFns: __vue_staticRenderFns__
-}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, createInjectorSSR, undefined);// Import vue component
-
-var install = function installVueValidationInput(Vue) {
+}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, createInjectorSSR, undefined);var install = function installVueValidationInput(Vue) {
   if (install.installed) return;
   install.installed = true;
   Vue.component('VueValidationInput', __vue_component__);
-}; // Create module definition for Vue.use()
-
+};
 
 var plugin = {
   install: install
-}; // To auto-install on non-es builds, when vue is found
-// eslint-disable-next-line no-redeclare
-
-/* global window, global */
+};
 
 {
   var GlobalVue = null;
@@ -222,11 +275,6 @@ var plugin = {
   if (GlobalVue) {
     GlobalVue.use(plugin);
   }
-} // Inject install function into component - allows component
-// to be registered via Vue.use() as well as Vue.component()
+}
 
-
-__vue_component__.install = install; // Export component by default
-// also be used as directives, etc. - eg. import { RollupDemoDirective } from 'rollup-demo';
-// export const RollupDemoDirective = component;
-exports.default=__vue_component__;
+__vue_component__.install = install;exports.default=__vue_component__;
