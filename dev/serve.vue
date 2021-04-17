@@ -1,17 +1,17 @@
+<template>
+  <div id="app">
+    <vue-validation-input />
+  </div>
+</template>
+
 <script>
 import Vue from 'vue';
 import VueValidationInput from '@/vue-validation-input.vue';
 
 export default Vue.extend({
-  name: 'ServeDev',
+  name: 'VueValidationInputApp',
   components: {
     VueValidationInput
   }
 });
 </script>
-
-<template>
-  <div id="app">
-    <vue-validation-input :placeholder="'This is a placeholder'"  />
-  </div>
-</template>
