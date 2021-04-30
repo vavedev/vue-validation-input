@@ -1,9 +1,9 @@
 {
   "name": "vue-validation-input",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": {
-    "name" : "Riyuu Ryu",
-    "email" : "riyuuryu@gmail.com"
+    "name" : "Victor Angelo Enriquez",
+    "email" : "vave.gamedev@gmail.com"
   },
   "homepage": "https://github.com/riyuuryu/vue-validation-input#readme",
   "description": "This is just a simple extension to the default input element which shows an SVG icon if valid or not.",
