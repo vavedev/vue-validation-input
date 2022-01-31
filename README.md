@@ -2,6 +2,7 @@
 ![npm](https://img.shields.io/npm/v/vue-validation-input)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/vavedev/vue-validation-input)
 [![GitHub license](https://img.shields.io/github/license/vavedev/vue-validation-input)](https://github.com/vavedev/vue-validation-input/blob/main/LICENSE)
+
 This is just a simple extension to the default input element which shows an SVG icon if valid or not.
 
 ## Screenshot
