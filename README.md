@@ -1,10 +1,7 @@
 # vue-validation-input
 ![npm](https://img.shields.io/npm/v/vue-validation-input)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/riyuuryu/vue-validation-input)
-[![dependencies](https://david-dm.org/riyuuryu/vue-validation-input.svg)](https://david-dm.org/riyuuryu/vue-validation-input.svg)
-[![devDependencies Status](https://status.david-dm.org/gh/riyuuryu/vue-validation-input.svg?type=dev)](https://david-dm.org/riyuuryu/vue-validation-input?type=dev)
-[![peerDependencies Status](https://status.david-dm.org/gh/riyuuryu/vue-validation-input.svg?type=peer)](https://david-dm.org/riyuuryu/vue-validation-input?type=peer)
-
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/vavedev/vue-validation-input)
+[![GitHub license](https://img.shields.io/github/license/vavedev/vue-validation-input)](https://github.com/vavedev/vue-validation-input/blob/main/LICENSE)
 This is just a simple extension to the default input element which shows an SVG icon if valid or not.
 
 ## Screenshot
@@ -41,24 +38,24 @@ export default {
 
 ## Prop
 
-| Prop                          | Type               | Default     | Description                              |
-|-------------------------------|--------------------|:-----------:|------------------------------------------|
-| container-class               | String, Array, Object | ""       | Binding class for input container |
-| input-class                   | String, Array, Object | ""       | Binding class for input |
-| icon-class                    | String, Array, Object | ""       | Binding class for SVG icon |
-| placeholder                   | String             | ""          | Placeholder text |
-| pattern                       | String             | ""          | A regular expression the input's contents must match in order to be valid |
-| readonly                      | Boolean            | false       | Boolean controller if input is read-only |
-| minlength                     | Number             | 1           | The minimum length of input to be considered as valid |
-| maxlength                     | Number             | -1          | The maximum allowed number of characters |
-| valid-color                   | String             | #33AF28 | Valid SVG icon color |
-| invalid-color                 | String             | #EE0202 | Invalid SVG icon color |
+| Prop            | Type                  | Default | Description                                                               |
+| --------------- | --------------------- | :-----: | ------------------------------------------------------------------------- |
+| container-class | String, Array, Object |   ""    | Binding class for input container                                         |
+| input-class     | String, Array, Object |   ""    | Binding class for input                                                   |
+| icon-class      | String, Array, Object |   ""    | Binding class for SVG icon                                                |
+| placeholder     | String                |   ""    | Placeholder text                                                          |
+| pattern         | String                |   ""    | A regular expression the input's contents must match in order to be valid |
+| readonly        | Boolean               |  false  | Boolean controller if input is read-only                                  |
+| minlength       | Number                |    1    | The minimum length of input to be considered as valid                     |
+| maxlength       | Number                |   -1    | The maximum allowed number of characters                                  |
+| valid-color     | String                | #33AF28 | Valid SVG icon color                                                      |
+| invalid-color   | String                | #EE0202 | Invalid SVG icon color                                                    |
 
 ## Event
 
-| Event                          | Type               | Output                     |
-|--------------------------------|--------------------|----------------------------|
-| vue-validation-output          | Object             | { value: String, valid: Boolean } |
+| Event                 | Type   | Output                            |
+| --------------------- | ------ | --------------------------------- |
+| vue-validation-output | Object | { value: String, valid: Boolean } |
 
 ## License
 
